@@ -14,7 +14,7 @@ export class WeatherComponent implements OnInit {
     this.getWeatherData();
   }
   getWeatherData(){
-    fetch('http://api.openweathermap.org/data/2.5/group?id=6452235,6454924,2995469&units=metric&appid=39f7af91a4b080cd1fdef1f8e81062e7')
+    fetch('https://api.openweathermap.org/data/2.5/group?id=6452235,6454924,2995469&units=metric&appid=39f7af91a4b080cd1fdef1f8e81062e7')
     .then(response=>response.json)
     .then(data=>{this.setWeatherData(data);}) 
     
