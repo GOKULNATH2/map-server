@@ -11,7 +11,7 @@ the component return json object from onchange event
 ``` json
 {
   key: "keyboard pressed key",
-  zoom: "map zoom", 
+  zoom: "map zoom", git 
   lat: "map latitude",
   lng: "map lnggitude",
   view: {
