@@ -32,7 +32,9 @@ var i = schedule.scheduleJob('* 5 0 * *', function() {
 		axios.spread((...responses) => {
 			const dataArray = [];
 			responses.map(obj => {
-				dataArray.push(obj.data);
+				obj.data.list.map(objNew => {
+					dataArray.push(objNew);
+				});
 			});
 			const today = new Date().getDate() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getFullYear(); 
 			fs.writeFile('./Data/weather_data/' + today + '.json', JSON.stringify(dataArray), function (err) {
@@ -56,7 +58,9 @@ var j = schedule.scheduleJob('* 5 12 * *', function() {
 		axios.spread((...responses) => {
 			const dataArray = [];
 			responses.map(obj => {
-				dataArray.push(obj.data);
+				obj.data.list.map(objNew => {
+					dataArray.push(objNew);
+				});
 			});
 			const today = new Date().getDate() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getFullYear(); 
 			fs.writeFile('./Data/weather_data/' + today + '.json', JSON.stringify(dataArray), function (err) {
